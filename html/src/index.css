@@ -1,0 +1,146 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 240 10% 4%;
+    --foreground: 0 0% 98%;
+    --card: 240 10% 6%;
+    --card-foreground: 0 0% 98%;
+    --popover: 240 10% 6%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 160 100% 45%;
+    --primary-foreground: 144 100% 10%;
+    --secondary: 240 5% 15%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 240 5% 15%;
+    --muted-foreground: 240 5% 60%;
+    --accent: 240 5% 15%;
+    --accent-foreground: 0 0% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 240 5% 15%;
+    --input: 240 5% 15%;
+    --ring: 160 100% 45%;
+    --radius: 0.5rem;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  html,
+  body {
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  }
+
+  body {
+    @apply text-foreground;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: hsl(var(--muted));
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(var(--muted-foreground) / 0.32);
+}
+
+.nui-solid-panel {
+  background: rgba(5, 7, 10, 0.96) !important;
+  box-shadow: 0 24px 72px rgba(0, 0, 0, 0.58), inset 0 1px 0 rgba(255, 255, 255, 0.04);
+}
+
+.nui-spawn-option {
+  background: rgba(9, 11, 16, 0.9) !important;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.035);
+}
+
+.nui-spawn-option:hover {
+  background: rgba(14, 17, 24, 0.98) !important;
+}
+
+.nui-spawn-option-selected {
+  background: linear-gradient(90deg, rgba(0, 227, 150, 0.22), rgba(9, 47, 37, 0.96)) !important;
+  box-shadow: 0 0 0 1px rgba(0, 227, 150, 0.2), 0 18px 46px rgba(0, 0, 0, 0.4);
+}
+
+.nui-icon-box,
+.nui-chip,
+.nui-key-hint,
+.nui-key-badge,
+.nui-empty-state {
+  background: rgba(5, 7, 10, 0.88) !important;
+}
+
+.nui-map-marker {
+  background: rgba(4, 6, 10, 0.96) !important;
+  box-shadow: 0 0 24px rgba(0, 0, 0, 0.55), 0 14px 36px rgba(0, 0, 0, 0.55) !important;
+}
+
+.nui-marker-label {
+  background: rgba(4, 6, 10, 0.94) !important;
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.52);
+}
+
+@keyframes spawnItemIn {
+  from {
+    opacity: 0;
+    transform: translateX(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.spawn-item {
+  animation: spawnItemIn 0.24s ease-out backwards;
+}
+
+.spawn-item:nth-child(1) {
+  animation-delay: 0.03s;
+}
+
+.spawn-item:nth-child(2) {
+  animation-delay: 0.06s;
+}
+
+.spawn-item:nth-child(3) {
+  animation-delay: 0.09s;
+}
+
+.spawn-item:nth-child(4) {
+  animation-delay: 0.12s;
+}
+
+.spawn-item:nth-child(5) {
+  animation-delay: 0.15s;
+}
+
+.spawn-item:nth-child(6) {
+  animation-delay: 0.18s;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .spawn-item {
+    animation: none;
+  }
+}
